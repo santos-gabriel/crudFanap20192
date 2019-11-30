@@ -34,4 +34,9 @@ public class CtrlProduto {
         return lista;
     }
 
+    public static Produto buscaProduto(Produto p) {
+        ProdutoDAO produtoDao = new ProdutoDAO();
+        return produtoDao.consultaProduto(p);
+    }
+
 }

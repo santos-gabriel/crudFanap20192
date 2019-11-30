@@ -42,8 +42,8 @@ public class ConexaoMySql {
         }
     }
 
-    public static void fecharCoexao(Connection con, PreparedStatement ps) {
-        fecharConexao(con);
+    public static void fecharConexao(Connection con, PreparedStatement ps) {
+        ConexaoMySql.fecharConexao(con);
         if (ps != null) {
             try {
                 ps.close();
@@ -55,7 +55,7 @@ public class ConexaoMySql {
     }
 
     public static void fecharConexao(Connection con, PreparedStatement ps, ResultSet rs) {
-        fecharCoexao(con, ps);
+        fecharConexao(con, ps);
         if (rs != null) {
             try {
                 rs.close();

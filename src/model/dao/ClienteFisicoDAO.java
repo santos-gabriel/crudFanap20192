@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.bean.ClienteFisico;
 
@@ -40,7 +42,7 @@ public class ClienteFisicoDAO {
             JOptionPane.showMessageDialog(null, "Erro inesperado! ");
             System.out.println(e);
         } finally {
-            ConexaoMySql.fecharConexao(conexao);
+            ConexaoMySql.fecharConexao(conexao, stmt);
         }
 
     }
@@ -65,7 +67,7 @@ public class ClienteFisicoDAO {
             JOptionPane.showMessageDialog(null, "Erro inesperado! ");
             System.out.println(e);
         } finally {
-            ConexaoMySql.fecharCoexao(conexao, stmt);
+            ConexaoMySql.fecharConexao(conexao, stmt);
         }
     }
 
@@ -87,7 +89,7 @@ public class ClienteFisicoDAO {
             JOptionPane.showMessageDialog(null, "Erro inesperado! ");
             System.out.println(e);
         } finally {
-            ConexaoMySql.fecharCoexao(conexao, stmt);
+            ConexaoMySql.fecharConexao(conexao, stmt);
         }
 
     }
@@ -123,6 +125,34 @@ public class ClienteFisicoDAO {
             ConexaoMySql.fecharConexao(conexao, stmt, rs);
         }
         return listaCliente;
+    }
+
+    public String buscaNome(ClienteFisico clif) {
+        Connection conexao = ConexaoMySql.conectar();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String nome = null;
+        String sql = "SELECT (nome_cliente) FROM tb_clientes_fisico WHERE cod_cliente = ?;";
+
+        try {
+            stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, clif.getCod());
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                nome = rs.getString("nome_cliente");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao carregar arquivos");
+            System.out.println(ex);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro inesperado! ");
+            System.out.println(e);
+        } finally {
+            ConexaoMySql.fecharConexao(conexao, stmt, rs);
+        }
+        return nome;
     }
 
 }

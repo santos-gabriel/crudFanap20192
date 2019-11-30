@@ -43,13 +43,13 @@ public class UsuarioDAO {
             JOptionPane.showMessageDialog(null, "Erro inesperado! ");
             System.out.println(e);
         } finally {
-            ConexaoMySql.fecharConexao(conexao);
+            ConexaoMySql.fecharConexao(conexao, stmt);
         }
 
     }
 
     public void editar(Usuario usuario) {
-        String sql = "UPDATE tb_usuarios SET nome_usuario = ?, login_usuario = ?, email_usuario = ?, senha_usuario WHERE cod_usuario = ?";
+        String sql = "UPDATE tb_usuarios SET nome_usuario = ?, login_usuario = ?, email_usuario = ?, senha_usuario = ? WHERE cod_usuario = ?";
         PreparedStatement stmt = null;
 
         try {
@@ -69,7 +69,7 @@ public class UsuarioDAO {
             JOptionPane.showMessageDialog(null, "Erro inesperado! ");
             System.out.println(e);
         } finally {
-            ConexaoMySql.fecharCoexao(conexao, stmt);
+            ConexaoMySql.fecharConexao(conexao, stmt);
         }
     }
 
@@ -90,7 +90,7 @@ public class UsuarioDAO {
             JOptionPane.showMessageDialog(null, "Erro inesperado! ");
             System.out.println(e);
         } finally {
-            ConexaoMySql.fecharCoexao(conexao, stmt);
+            ConexaoMySql.fecharConexao(conexao, stmt);
         }
 
     }

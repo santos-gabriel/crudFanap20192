@@ -344,9 +344,9 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Insira um valor para o produto! ");
         } else {
             salvarProduto();
-            DefaultTableModel dtm = (DefaultTableModel) tbProduto.getModel();
-            Object[] conteudo = {txtCodProduto.getText(), txtDescricaoProduto.getText(), txtValorProduto.getText()};
-            dtm.addRow(conteudo);
+            //DefaultTableModel dtm = (DefaultTableModel) tbProduto.getModel();
+            //Object[] conteudo = {txtCodProduto.getText(), txtDescricaoProduto.getText(), txtValorProduto.getText()};
+            // dtm.addRow(conteudo);
             desabilitarCampos();
             listarTabela();
         }

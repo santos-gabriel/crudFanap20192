@@ -34,4 +34,9 @@ public class CtrlClienteFisico {
 
     }
 
+    public static String buscaNome(ClienteFisico clif) {
+        ClienteFisicoDAO cliDao = new ClienteFisicoDAO();
+        return cliDao.buscaNome(clif);
+    }
+
 }

@@ -34,4 +34,9 @@ public class CtrlClienteJuridico {
 
     }
 
+    public static String buscaNome(ClienteJuridico clij) {
+        ClienteJuridicoDAO cliDao = new ClienteJuridicoDAO();
+        return cliDao.buscaNomeCliente(clij);
+    }
+
 }
