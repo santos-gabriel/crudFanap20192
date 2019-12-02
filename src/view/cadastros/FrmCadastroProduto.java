@@ -126,6 +126,7 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Vendas Tech");
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Produtos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -225,6 +226,7 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
+        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/package_add.png"))); // NOI18N
         btnNovo.setText("Novo");
         btnNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNovo.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +235,7 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
             }
         });
 
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/accept.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalvar.setEnabled(false);
@@ -242,6 +245,7 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
             }
         });
 
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/pencil.png"))); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditar.setEnabled(false);
@@ -251,6 +255,7 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
             }
         });
 
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/package_delete.png"))); // NOI18N
         btnExcluir.setText("Excluir");
         btnExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExcluir.setEnabled(false);
@@ -260,6 +265,7 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/cancel.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {

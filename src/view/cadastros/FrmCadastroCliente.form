@@ -7,6 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Vendas Tech"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -32,7 +33,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="533" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -69,6 +70,9 @@
               <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
             </TitledBorder>
           </Border>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f0" green="f0" red="f0" type="rgb"/>
         </Property>
       </Properties>
 
@@ -282,6 +286,11 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f0" green="f0" red="f0" type="rgb"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -340,6 +349,9 @@
             <TitledBorder/>
           </Border>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f0" green="f0" red="f0" type="rgb"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -379,6 +391,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnNovo">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icones/iconsPng/user_add.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Novo"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor em Forma de M&#xe3;o"/>
@@ -390,6 +405,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnSalvar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icones/iconsPng/accept.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Salvar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor em Forma de M&#xe3;o"/>
@@ -402,6 +420,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnEditar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icones/iconsPng/user_edit.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Editar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor em Forma de M&#xe3;o"/>
@@ -414,6 +435,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnExcluir">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icones/iconsPng/user_delete.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Excluir"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor em Forma de M&#xe3;o"/>
@@ -426,6 +450,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnCancelar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icones/iconsPng/cancel.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor em Forma de M&#xe3;o"/>

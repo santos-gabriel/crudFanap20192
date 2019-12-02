@@ -35,7 +35,7 @@ public class ItensVendaDAO {
             stmt.setDouble(4, iv.getTotalItensVenda());
 
             stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso! ");
+            //JOptionPane.showMessageDialog(null, "Salvo com sucesso! ");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar! ");
             System.out.println(ex);

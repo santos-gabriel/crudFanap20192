@@ -208,6 +208,7 @@ public class FrmVendas extends javax.swing.JFrame {
         tbVendas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Vendas Tech");
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vendas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -234,6 +235,7 @@ public class FrmVendas extends javax.swing.JFrame {
 
         txtNomeProduto.setEnabled(false);
 
+        btnInserirProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/cart_put.png"))); // NOI18N
         btnInserirProduto.setText("Inserir Produto");
         btnInserirProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInserirProduto.setEnabled(false);
@@ -398,8 +400,9 @@ public class FrmVendas extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("  "));
 
+        btnNovaVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/cart_add.png"))); // NOI18N
         btnNovaVenda.setText("Nova Venda");
         btnNovaVenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNovaVenda.addActionListener(new java.awt.event.ActionListener() {
@@ -408,6 +411,7 @@ public class FrmVendas extends javax.swing.JFrame {
             }
         });
 
+        btnFinalizarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/cart_go.png"))); // NOI18N
         btnFinalizarVenda.setText("Finalizar Venda");
         btnFinalizarVenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnFinalizarVenda.setEnabled(false);
@@ -417,6 +421,7 @@ public class FrmVendas extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconsPng/cancel.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -444,7 +449,7 @@ public class FrmVendas extends javax.swing.JFrame {
                 .addComponent(btnNovaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(btnFinalizarVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -549,16 +554,16 @@ public class FrmVendas extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -570,9 +575,9 @@ public class FrmVendas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -699,6 +704,8 @@ public class FrmVendas extends javax.swing.JFrame {
     private void btnFinalizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarVendaActionPerformed
         limparTabela();
         limparTodosCampos();
+        btnFinalizarVenda.setEnabled(false);
+        btnInserirProduto.setEnabled(false);
         JOptionPane.showMessageDialog(null, "Venda finalizada");
     }//GEN-LAST:event_btnFinalizarVendaActionPerformed
 
