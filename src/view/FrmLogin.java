@@ -5,6 +5,13 @@
  */
 package view;
 
+import controller.CtrlUsuario;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import model.bean.Usuario;
+
 /**
  *
  * @author gabriel
@@ -61,6 +68,12 @@ public class FrmLogin extends javax.swing.JFrame {
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntrarActionPerformed(evt);
+            }
+        });
+
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
             }
         });
 
@@ -127,10 +140,20 @@ public class FrmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        FrmPrincipal frm = new FrmPrincipal();
-        frm.setVisible(true);
-        this.setVisible(false);
-        this.dispose();
+
+        Usuario user = new Usuario();
+        user.setLogin(txtUsuario.getText());
+        user.setSenha(txtSenha.getText());
+
+        if (CtrlUsuario.validaLogin(user)) {
+            FrmPrincipal frm = new FrmPrincipal();
+            frm.setVisible(true);
+            this.setVisible(false);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
+        }
+
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -138,6 +161,23 @@ public class FrmLogin extends javax.swing.JFrame {
         this.dispose();
         System.exit(0);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Usuario user = new Usuario();
+            user.setLogin(txtUsuario.getText());
+            user.setSenha(txtSenha.getText());
+
+            if (CtrlUsuario.validaLogin(user)) {
+                FrmPrincipal frm = new FrmPrincipal();
+                frm.setVisible(true);
+                this.setVisible(false);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
+            }
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
 
     /**
      * @param args the command line arguments

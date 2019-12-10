@@ -104,10 +104,18 @@ public class FrmVendas extends javax.swing.JFrame {
         txtDataVenda.setText("");
         txtValorProduto.setText("");
         txtClienteFisico.setText("");
+        txtClienteFisico.setEnabled(false);
+        txtCodClienteFisico.setEnabled(false);
         txtClienteJuridico.setText("");
+        txtClienteJuridico.setEnabled(false);
+        txtCodClienteJuridico.setEnabled(false);
         txtCodClienteFisico.setText("");
+        txtCodClienteJuridico.setText("");
         txtCodVenda.setText("");
         txtNomeProduto.setText("");
+        buttonGroup1.clearSelection();
+        rbFisico.setEnabled(false);
+        rbJuridico.setEnabled(false);
     }
 
     private void insereData() {

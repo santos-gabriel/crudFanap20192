@@ -34,4 +34,9 @@ public class CtrlUsuario {
         return lista;
     }
 
+    public static boolean validaLogin(Usuario user) {
+        UsuarioDAO usuarioDao = new UsuarioDAO();
+        return usuarioDao.validaLogin(user);
+    }
+
 }

@@ -129,4 +129,35 @@ public class UsuarioDAO {
         return listaUsuario;
     }
 
+    public boolean validaLogin(Usuario user) {
+        Connection conexao = ConexaoMySql.conectar();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        boolean permitido = false;
+
+        try {
+            stmt = conexao.prepareStatement("SELECT login_usuario, senha_usuario FROM tb_usuarios WHERE login_usuario = ? AND senha_usuario = ?;");
+            stmt.setString(1, user.getLogin());
+            stmt.setString(2, user.getSenha());
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                permitido = true;
+            } else {
+                permitido = false;
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao carregar arquivos");
+            System.out.println(ex);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro inesperado! ");
+            System.out.println(e);
+        } finally {
+            ConexaoMySql.fecharConexao(conexao, stmt, rs);
+        }
+        return permitido;
+    }
+
 }
